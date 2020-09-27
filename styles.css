@@ -1,27 +1,13 @@
 
 
 .container {
-    display: flex;
-    padding: 200px;
-    flex-direction: column;
+    
+    
+    
     background-color: #9dbdbd ;
-    margin-top: 100px;
-
-
-}
-
-.row {
     
-    justify-content: center;
-    
-}
 
-h2 {
-    text-align: center;
 
 }
 
-.card {
-    margin: 5px;
-}
 

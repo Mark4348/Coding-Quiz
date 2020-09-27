@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script defer type="text/javascript"  src="scripts.js" charset="utf-8"></script>
 </head>
 <body>
 
-    
-    <div class=container>
-        <div class=row>
-            <div class="Titlecard"><h1>Coding quiz</h1></div>
-            <h6>Test your coding knowledge</h6>
+    <!-- Quiz container starts here-->
+    <div class="container">
+            <div id="question-container"class="hide">
+                <div id="question">Question</div>
+    <!-- Answer choices-->
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </div>
+    <!-- Controls for the next question and starting quiz-->
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+
+
+            </div>
         </div>
-        <div class="row">
-            <div class=card><h5>Question 1</h5></div>
-        </div>
-        
-        <div class=card id="answer1"><h5>Choice 1</h5></div>       
-        <div class=card id="answer2"><h5>Choice 2</h5></div>
-        <div class=card id="answer3"><h5>Choice 3</h5></div>
-        <div class=card id="answer"><h5>Choice 4</h5></div>
-        
-    </div>
-    
 
-
-
-    <script type="text/javascript"  src="scripts.js" charset="utf-8"></script>
 </body>
 
 </html>
