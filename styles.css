@@ -12,7 +12,15 @@
     --hue-correct: 145;
 
 }
+.container {
+    width: 800px;
+    max-width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    background-color: white;
 
+}
 
 body {
     --hue: var(--hue-neutral);
@@ -32,4 +40,56 @@ body.correct {
 /* Color the page turns when the user gets the wrong answer*/
 body.wrong {
     --hue: var(--hue-wrong);
+}
+/* Aligns buttons within the container*/
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: black;
+
+}
+/* Sets the variable of the correct hue to the button*/
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+
+}
+/* Sets the variable of the wrong hue to the button*/
+.btn.wrong {
+    --hue: var(--hue-wrong);
+
+}
+
+.start-btn, .next-btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+
+}
+/* Aligns the control buttons */
+.controls {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* Displays the starting screen */
+.hide {
+    display: none;
+  
 }
