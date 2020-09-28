@@ -101,22 +101,48 @@ const questions = [
         ]
     },
     { 
-        question: 'Inside which element do we put the Javascript source code in?',
+        question: 'If a paragraph tag is inside of a body tag, which one is the parent element?',
             answers: [
-            { text: 'javascript', correct: false},
-            { text: 'js', correct: false},
-            { text: 'script', correct: true},
-            { text: 'head', correct: false},
-    ]
+            { text: 'paragraph tag', correct: false},
+            { text: 'html tag', correct: false},
+            { text: 'body tag', correct: true},
+            { text: 'tag tag', correct: false},
+            ]
 },
-{       question: 'Inside which element do we put the Javascript source code in?',
+{       question: 'What does DOM stand for?',
             answers: [
-            { text: 'javascript', correct: false},
-            { text: 'js', correct: false},
-            { text: 'script', correct: true},
-            { text: 'head', correct: false},
-]
+            { text: 'Document Object Markup', correct: false},
+            { text: 'Document Object Model', correct: true},
+            { text: 'Document Object Method', correct: false},
+            { text: 'Dorito Orange Mint', correct: false},
+            ]
+},
+    {
+        question: 'What does CSS stand for?',
+        answers: [
+            { text: 'Computer Style System', correct: false},
+            { text: 'Cascading Style Sheet', correct: true},
+            { text: 'Computer Style Sheet', correct: false},
+            { text: 'Cascading Step System', correct: false},
+            ]
 }, 
-
+     {       
+        question: 'How do you call a function?',
+        answers: [
+            { text: 'functionName()', correct: true},
+            { text: '#functionName', correct: false},
+            { text: '.functionName', correct: false},
+            { text: 'functionName=', correct: false},
+            ]
+},         
+{       
+        question: 'What is a boolean?',
+        answers: [
+            { text: 'A method used with functions', correct: false},
+            { text: 'A way to call multiple classes', correct: false},
+            { text: 'A css color property', correct: false},
+            { text: 'A true and false statement', correct: true},
+             ]
+},
 
 ]
