@@ -47,9 +47,11 @@ function showQuestion(question) {
 }
 /* function to reset each question with new answers*/
 function resetState() {
+    clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild
+        (answerButtonsElement.firstChild)
     }
 }
 
@@ -62,6 +64,13 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+    }
+
     nextButton.classList.remove('hide')
 }
 
@@ -82,14 +91,32 @@ function clearStatusClass(element) {
 
 /* List of questions*/
 const questions = [ 
-    {
+    { 
         question: 'Inside which element do we put the Javascript source code in?',
-        answers: [
+            answers: [
             { text: 'javascript', correct: false},
             { text: 'js', correct: false},
             { text: 'script', correct: true},
             { text: 'head', correct: false},
         ]
-    }
+    },
+    { 
+        question: 'Inside which element do we put the Javascript source code in?',
+            answers: [
+            { text: 'javascript', correct: false},
+            { text: 'js', correct: false},
+            { text: 'script', correct: true},
+            { text: 'head', correct: false},
+    ]
+},
+{       question: 'Inside which element do we put the Javascript source code in?',
+            answers: [
+            { text: 'javascript', correct: false},
+            { text: 'js', correct: false},
+            { text: 'script', correct: true},
+            { text: 'head', correct: false},
+]
+}, 
+
 
 ]
