@@ -12,6 +12,12 @@
     --hue-correct: 145;
 
 }
+/*
+.header {
+    display: absolute;
+    
+
+}*/
 .container {
     width: 800px;
     max-width: 80%;
@@ -89,7 +95,7 @@ body.wrong {
     align-items: center;
 
 }
-/* Displays the starting screen */
+/* Toggles the hide feature for the buttons and screen */
 .hide {
     display: none;
   

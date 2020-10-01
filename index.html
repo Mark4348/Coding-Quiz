@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
-    <script defer type="text/javascript"  src="scripts.js" charset="utf-8"></script>
+    <script defer type="text/javascript" src="scripts.js" charset="utf-8"></script>
 </head>
+
 <body>
 
     <!-- Quiz container starts here-->
+    <div class=header>
+        <!-- <div id="score">Score</div> -->
+    </div>
     <div class="container">
-            <div id="question-container" class=hide>
-                <div id="question">Question</div>
-    <!-- Answer choices-->
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
-                </div>
-            </div>
-    <!-- Controls for the next question and starting quiz-->
-            <div class="controls">
-                <button id="start-btn" class="start-btn btn">Start</button>
-                <button id="next-btn" class="next-btn btn hide">Next</button>
 
-
-            </div>
+        <div id="start-screen">
+            <h1>CODING QUIZ</h1>
+            <p>Take this coding quiz and test your knowledge!</p>
         </div>
+
+        <div id="question-container" class=hide>
+            <div id="question">Question</div>
+            <!-- Answer choices-->
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+
+            <div><span class="time">:59</span> seconds left!</div>
+        </div>
+    </div>
+    <div class="hide" id="game-over">
+        <h2>Game over!</h2>
+        <p>Your score: <span class="time"></span></p>
+    </div>
+    <!-- Controls for the next question and starting quiz-->
+    <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+
 
 </body>
 

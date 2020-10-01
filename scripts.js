@@ -3,6 +3,8 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+var score = 0;
+var time = document.querySelector(".time");
 
 /* This variable mixes the questions order around and able to be redefined*/
 
@@ -14,8 +16,35 @@ nextButton.addEventListener('click', () => {
     setNextQuestion()
 })
 
+function startTimer(duration, display) {
+    var timer = duration, seconds;
+    setInterval(function () {
+        seconds = parseInt(timer % 60, 10);
+        display.textContent = ":" + seconds;
+        if (-- timer < 0) {
+            alert("gameover!")
+        }
+    }, 1000);
+}
+
+function gameOver(){
+    var scoreScreen = document.getElementById("game-over");
+    scoreScreen.removeAttribute("class")
+    var finalScore = document.querySelector(".time");
+    finalScore.textContent = secs;
+    questionContainerElement.setAttribute("class", "hide");
+
+
+
+}
+
+
+/* This is the starting button function*/
 function startGame() {
     console.log('Started')
+    var secs = 59 ,
+        display = document.querySelector('#time');
+    startTimer(secs, display);
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -27,9 +56,29 @@ function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 
-
 }
+    /*
+    function scoreCounter() {
 
+        var timerInterval = setInterval(function () {
+            time--;
+            countdownEl.textContent = "Time: " + time;
+            if (time === 0 || questions >= 6) {
+                timer.textContent = "Score : " + time;
+                tallyScore();
+                prompt("Enter Initials");
+                clearInterval(timerInterval);   
+            }
+        }, 1000)
+    };
+
+    function tallyScore(){
+     if(questions>=6)
+        {}
+
+    } */
+
+/* This function ties together the question card with the answer buttons*/
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -38,10 +87,11 @@ function showQuestion(question) {
         button.classList.add('btn')
         /* Validates if the answer is correct*/
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct  
+
         }
         button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        answerButtonsElement.appendChild(button) 
     })
     
 }
@@ -70,10 +120,14 @@ function selectAnswer(e) {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
     }
-
     nextButton.classList.remove('hide')
+    
 }
 
+
+
+
+/* This function makes the background green or red if the answer is right or wrong*/
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -83,19 +137,19 @@ function setStatusClass(element, correct) {
     }
 }
 
-
+/* This function clears the background color between each question*/
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
-/* List of questions*/
+/* List of questions and answers*/
 const questions = [ 
     { 
         question: 'Inside which element do we put the Javascript source code in?',
             answers: [
             { text: 'javascript', correct: false},
-            { text: 'js', correct: false},
+            { text: 'js', correct: false,},
             { text: 'script', correct: true},
             { text: 'head', correct: false},
         ]
@@ -108,7 +162,7 @@ const questions = [
             { text: 'body tag', correct: true},
             { text: 'tag tag', correct: false},
             ]
-},
+} /*
 {       question: 'What does DOM stand for?',
             answers: [
             { text: 'Document Object Markup', correct: false},
@@ -143,6 +197,5 @@ const questions = [
             { text: 'A css color property', correct: false},
             { text: 'A true and false statement', correct: true},
              ]
-},
-
+}, */
 ]
